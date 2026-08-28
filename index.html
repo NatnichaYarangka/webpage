@@ -3,238 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="เว็บไซต์ Portfolio ของนักเรียนชั้นมัธยมศึกษาปีที่ 3">
-    <title>My Portfolio | หน้าแรก</title>
-
+    <title>หน้าแรก | Student Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Navigation -->
-    <header class="site-header">
-        <nav class="navbar container">
-
-            <a href="index.html" class="logo">
-                <span class="logo-mark">M</span>
-                <span>My<span>Portfolio</span></span>
-            </a>
-
-            <div class="nav-links">
-                <a href="index.html" class="active">หน้าแรก</a>
-                <a href="profile.html">ประวัติส่วนตัว</a>
-                <a href="education.html">การศึกษา</a>
-                <a href="hobby.html">งานอดิเรก</a>
-                <a href="contact.html">ติดต่อ</a>
-            </div>
-
-        </nav>
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">PORTFOLIO<span>.M3</span></a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">หน้าแรก</a></li>
+                    <li><a href="profile.html" class="nav-link">ประวัติส่วนตัว</a></li>
+                    <li><a href="education.html" class="nav-link">การศึกษา</a></li>
+                    <li><a href="hobby.html" class="nav-link">งานอดิเรก</a></li>
+                    <li><a href="contact.html" class="nav-link">ติดต่อ</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-bg-circle circle-one"></div>
-            <div class="hero-bg-circle circle-two"></div>
-
-            <div class="container hero-content">
-
-                <div class="hero-text fade-up">
-
-                    <span class="eyebrow">
-                        STUDENT PORTFOLIO
-                    </span>
-
-                    <h1>
-                        สวัสดีค่ะ 👋<br>
-                        ฉันชื่อ <span>[ด.ญ.ณัฐนิชา ยารังกา]</span>
-                    </h1>
-
-                    <p class="hero-description">
-                        นักเรียนชั้นมัธยมศึกษาปีที่ 3
-                        ที่สนใจการเรียนรู้ เทคโนโลยี
-                        และการสร้างสรรค์สิ่งใหม่ ๆ
-                    </p>
-
-                    <p class="hero-tagline">
-                        “ทำทุกวันให้ดีที่สุด”
-                    </p>
-
+        <section class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="badge">สวัสดีครับ / ค่ะ 👋</span>
+                    <h1>ยินดีต้อนรับสู่ <br><span class="text-gradient">[กรอกชื่อ-นามสกุล]</span></h1>
+                    <p class="hero-subtitle">นักเรียนชั้นมัธยมศึกษาปีที่ 3/1 โรงเรียนจอมทอง ผู้มีความสนใจในด้านเทคโนโลยี การออกแบบ และการเรียนรู้สิ่งใหม่ ๆ</p>
                     <div class="hero-buttons">
-
-                        <a href="profile.html" class="btn btn-primary">
-                            รู้จักฉันมากขึ้น
-                            <span>→</span>
-                        </a>
-
-                        <a href="hobby.html" class="btn btn-outline">
-                            ดูงานอดิเรกของฉัน
-                        </a>
-
+                        <a href="profile.html" class="btn btn-primary">รู้จักฉันมากขึ้น</a>
+                        <a href="hobby.html" class="btn btn-secondary">ดูงานอดิเรกของฉัน</a>
                     </div>
-
-                    <div class="quick-stats">
-
-                        <div>
-                            <strong>ม.3</strong>
-                            <span>ระดับชั้น</span>
-                        </div>
-
-                        <div>
-                            <strong>2026</strong>
-                            <span>ปีการศึกษา</span>
-                        </div>
-
-                        <div>
-                            <strong>∞</strong>
-                            <span>การเรียนรู้</span>
-                        </div>
-
-                    </div>
-
                 </div>
-
-                <div class="hero-visual fade-up">
-
-                    <div class="profile-decoration"></div>
-
-                    <div class="profile-frame">
-                        <img
-                            src="https://placehold.co/520x620/E3F2FD/1976D2?text=Profile"
-                            alt="รูปโปรไฟล์ของฉัน"
-                        >
-                    </div>
-
-                    <div class="floating-card card-top">
-                        <span>✨</span>
-                        <div>
-                            <strong>Creative</strong>
-                            <small>Student</small>
-                        </div>
-                    </div>
-
-                    <div class="floating-card card-bottom">
-                        <span>💻</span>
-                        <div>
-                            <strong>Technology</strong>
-                            <small>My Interest</small>
-                        </div>
-                    </div>
-
+                <div class="hero-image-wrapper">
+                    <div class="profile-bg-circle"></div>
+                    <img src="https://placehold.co/400x400/8e24aa/ffffff?text=Profile+Image" alt="รูปโปรไฟล์ของฉัน" class="hero-profile-img">
                 </div>
-
             </div>
         </section>
 
-
-        <!-- Introduction -->
-        <section class="section">
-            <div class="container">
-
-                <div class="section-heading center">
-                    <span class="section-label">WELCOME</span>
-                    <h2>ยินดีที่ได้รู้จัก</h2>
-                    <p>
-                        เว็บไซต์นี้จัดทำขึ้นเพื่อแนะนำตัวตน
-                        ความสนใจ งานอดิเรก และประวัติการศึกษาของฉัน
-                    </p>
+        <section class="quick-stats">
+            <div class="container stats-grid">
+                <div class="stat-card">
+                    <h3>ระดับชั้น</h3>
+                    <p>ม.3/2</p>
                 </div>
-
-                <div class="feature-grid">
-
-                    <article class="feature-card">
-                        <div class="feature-icon">👨‍🎓</div>
-                        <h3>เกี่ยวกับฉัน</h3>
-                        <p>
-                            ทำความรู้จักตัวตน ความสนใจ
-                            และเป้าหมายของฉันมากขึ้น
-                        </p>
-                        <a href="profile.html">อ่านเพิ่มเติม →</a>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🎓</div>
-                        <h3>การศึกษา</h3>
-                        <p>
-                            ดูเส้นทางการศึกษาและวิชาที่ฉันสนใจ
-                        </p>
-                        <a href="education.html">ดูประวัติ →</a>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="feature-icon">🎮</div>
-                        <h3>งานอดิเรก</h3>
-                        <p>
-                            กิจกรรมและสิ่งต่าง ๆ ที่ฉันชอบทำ
-                            ในเวลาว่าง
-                        </p>
-                        <a href="hobby.html">ดูงานอดิเรก →</a>
-                    </article>
-
+                <div class="stat-card">
+                    <h3>สายการเรียน/ความสนใจ</h3>
+                    <p>สายการเรียนวิทย์-คณิต/ด้านดนตรี</p>
                 </div>
-
+                <div class="stat-card">
+                    <h3>วิชาที่ชอบ</h3>
+                    <p>คริตศาสตร์</p>
+                </div>
             </div>
         </section>
-
-
-        <!-- CTA -->
-        <section class="cta-section">
-            <div class="container">
-
-                <div class="cta-box">
-
-                    <div>
-                        <span class="section-label light">
-                            LET'S CONNECT
-                        </span>
-
-                        <h2>อยากรู้จักฉันมากขึ้นไหม?</h2>
-
-                        <p>
-                            สามารถดูข้อมูลเพิ่มเติมหรือติดต่อฉันได้ที่หน้าติดต่อ
-                        </p>
-                    </div>
-
-                    <a href="contact.html" class="btn btn-white">
-                        ติดต่อฉัน →
-                    </a>
-
-                </div>
-
-            </div>
-        </section>
-
     </main>
 
-
-    <!-- Footer -->
     <footer class="footer">
-
-        <div class="container footer-content">
-
-            <div>
-                <div class="footer-logo">MyPortfolio</div>
-                <p>
-                    Portfolio Website ของนักเรียนชั้น ม.3
-                </p>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>PORTFOLIO<span>.M3</span></h3>
+                <p>เว็บไซต์แนะนำตัวเองสำหรับโครงงานวิชาคอมพิวเตอร์</p>
+                <p>จัดทำโดย ด.ญ.ณัฐนิชา ยารังกา ชั้น ม.3/2</p>
             </div>
-
             <div class="footer-links">
-                <a href="index.html">หน้าแรก</a>
-                <a href="profile.html">ประวัติส่วนตัว</a>
-                <a href="education.html">การศึกษา</a>
-                <a href="hobby.html">งานอดิเรก</a>
-                <a href="contact.html">ติดต่อ</a>
+                <h4>เมนูด่วน</h4>
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                    <li><a href="education.html">การศึกษา</a></li>
+                    <li><a href="hobby.html">งานอดิเรก</a></li>
+                    <li><a href="contact.html">ติดต่อ</a></li>
+                </ul>
             </div>
-
         </div>
-
-        <div class="container copyright">
-            © 2026 [กรอกชื่อ] | Student Portfolio
+        <div class="footer-bottom">
+            <p>&copy; 2026 ด.ญ.ณัฐนิชา ยารังกา. All Rights Reserved.</p>
         </div>
-
     </footer>
-
 </body>
 </html>
