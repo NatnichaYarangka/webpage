@@ -1,5 +1,6 @@
 /* ==========================================
-   1. CSS Reset & Variable Definitions (Music Theme)
+   1. CSS Reset & Variables Definitions
+   Theme: Sweet Music (Soft Red, Mauve & Magenta)
    ========================================== */
 * {
     margin: 0;
@@ -9,42 +10,111 @@
 }
 
 :root {
-    /* เปลี่ยนโทนสีเป็นธีมเครื่องดนตรี (Wood & Warm Gold Tone) */
-    --primary-dark: #3E2723;    /* สีน้ำตาลเข้ม (Dark Wood / Walnut Body) */
-    --primary-main: #6D4C41;    /* สีน้ำตาลอบอุ่น (Acoustic Wood / Guitar) */
-    --primary-light: #D4AF37;   /* สีทองบรอนซ์ (Brass / Metallic Instrument) */
-    --accent-blue: #E5C158;      /* สีเหลืองทองนวล (Glowing Accent) */
-    --bg-light: #F5EBE6;         /* สีครีมอุ่น (Sheet Music Paper) */
-    --bg-white: #FFFFFF;         /* สีขาวบริสุทธิ์ */
-    --text-color: #2C1D11;       /* สีน้ำตาลดำสำหรับข้อความ */
-    --text-muted: #795548;       /* สีน้ำตาลอ่อนสำหรับข้อความรอง */
-    --shadow-sm: 0 4px 6px -1px rgba(62, 39, 35, 0.08);
-    --shadow-md: 0 10px 15px -3px rgba(62, 39, 35, 0.15);
-    --radius-md: 16px;
+    --primary-dark: #5E2A4A;     /* สีม่วงเข้มอมแดง */
+    --primary-main: #A84370;     /* สีชมพูบานเย็นอมม่วง */
+    --primary-light: #E281A5;    /* สีชมพูกุหลาบหวาน */
+    --accent-color: #FFB7C5;     /* สีชมพูซากุระพาสเทล */
+    --bg-light: #FFF3F6;         /* พื้นหลังครีมชมพูหวานอ่อน */
+    --bg-white: #FFFFFF;
+    --text-color: #3A2332;       /* สีข้อความน้ำตาลม่วงเข้ม */
+    --text-muted: #8C687D;
+    --shadow-sm: 0 4px 10px rgba(168, 67, 112, 0.08);
+    --shadow-md: 0 10px 22px rgba(94, 42, 74, 0.15);
+    --radius-md: 20px;
     --radius-full: 9999px;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    background-color: #FAF6F0;  /* พื้นหลังสีครีมละมุนสบายตา */
+    background-color: var(--bg-light);
     color: var(--text-color);
     line-height: 1.6;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-light);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-main);
 }
 
 /* ==========================================
-   2. Typography & Layout Utilities
+   2. Floating Music Notes Background Effect
+   ========================================== */
+.music-notes-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.note {
+    position: absolute;
+    color: var(--primary-light);
+    opacity: 0.25;
+    font-size: 2.2rem;
+    animation: floatNote 12s infinite linear;
+}
+
+.n1 { left: 8%; animation-duration: 10s; animation-delay: 0s; }
+.n2 { left: 28%; animation-duration: 14s; animation-delay: 2s; }
+.n3 { left: 52%; animation-duration: 11s; animation-delay: 4s; }
+.n4 { left: 76%; animation-duration: 13s; animation-delay: 1s; }
+.n5 { left: 92%; animation-duration: 9s; animation-delay: 3s; }
+
+@keyframes floatNote {
+    0% {
+        transform: translateY(105vh) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.35;
+    }
+    80% {
+        opacity: 0.35;
+    }
+    100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ==========================================
+   3. Typography & Layout Utilities
    ========================================== */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .page-content {
     padding: 60px 0;
     flex: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -53,15 +123,15 @@ body {
 }
 
 .section-title h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-dark);
 }
 
 .section-title p {
     color: var(--primary-main);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     font-size: 0.875rem;
 }
 
@@ -81,19 +151,20 @@ body {
 .mt-40 { margin-top: 40px; }
 
 /* ==========================================
-   3. Components (Cards, Buttons)
+   4. Components (Cards, Buttons, Badges)
    ========================================== */
 .card {
-    background: var(--bg-white);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
     border-radius: var(--radius-md);
     padding: 24px;
-    border: 1px solid rgba(212, 175, 55, 0.2);
+    border: 1px solid rgba(226, 129, 165, 0.3);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-md);
     border-color: var(--primary-light);
 }
@@ -110,12 +181,12 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
     color: white;
-    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.25);
+    box-shadow: 0 4px 15px rgba(168, 67, 112, 0.3);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(62, 39, 35, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(168, 67, 112, 0.4);
 }
 
 .btn-secondary {
@@ -125,20 +196,29 @@ body {
 }
 
 .btn-secondary:hover {
-    background: var(--accent-blue);
+    background: var(--accent-color);
     color: var(--primary-dark);
 }
 
+.badge {
+    background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
+    color: white;
+    padding: 6px 16px;
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
 /* ==========================================
-   4. Navigation Bar
+   5. Navigation Bar
    ========================================== */
 .navbar-container {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(250, 246, 240, 0.92);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    background: rgba(255, 243, 246, 0.88);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 129, 165, 0.25);
 }
 
 .navbar {
@@ -158,35 +238,34 @@ body {
 }
 
 .logo span {
-    color: var(--primary-light);
+    color: var(--primary-main);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 16px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
-    padding: 8px 16px;
+    font-weight: 600;
+    padding: 8px 18px;
     border-radius: var(--radius-full);
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    background-color: var(--bg-light);
-    color: var(--primary-dark);
+    background-color: var(--primary-main);
+    color: white;
 }
 
 /* ==========================================
-   5. Hero Section (Index)
+   6. Hero Section
    ========================================== */
 .hero-section {
-    padding: 80px 20px;
-    background: linear-gradient(180deg, var(--bg-light) 0%, #FAF6F0 100%);
+    padding: 60px 20px;
 }
 
 .hero-container {
@@ -198,15 +277,6 @@ body {
     align-items: center;
 }
 
-.badge {
-    background: var(--primary-dark);
-    color: var(--accent-blue);
-    padding: 6px 14px;
-    border-radius: var(--radius-full);
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
 .hero-text h1 {
     font-size: 2.8rem;
     margin: 16px 0;
@@ -215,7 +285,7 @@ body {
 }
 
 .highlight-text {
-    background: linear-gradient(90deg, var(--primary-dark), var(--primary-light));
+    background: linear-gradient(90deg, var(--primary-dark), var(--primary-main));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -241,48 +311,57 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 250px;
-    height: 250px;
+    width: 260px;
+    height: 260px;
     background: var(--primary-light);
-    filter: blur(60px);
-    opacity: 0.35;
+    filter: blur(50px);
+    opacity: 0.45;
     border-radius: 50%;
     z-index: 1;
 }
 
-.profile-img {
+/* Vinyl Record Profile Effect */
+.vinyl-container {
     position: relative;
     z-index: 2;
+    display: inline-block;
+}
+
+.vinyl-record {
     width: 280px;
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
-    border: 6px solid white;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease;
+    border: 8px solid var(--primary-dark);
+    box-shadow: 0 0 25px rgba(168, 67, 112, 0.4);
+    transition: transform 0.5s ease;
 }
 
-.profile-img:hover {
-    transform: scale(1.03);
+.vinyl-record:hover {
+    transform: rotate(45deg) scale(1.03);
 }
 
 .stat-card {
     text-align: center;
-    background: linear-gradient(135deg, white, var(--bg-light));
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
 }
 
 .stat-card h3 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     color: var(--primary-dark);
 }
 
 .stat-card p {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 /* ==========================================
-   6. Profile Page
+   7. Profile Page
    ========================================== */
 .profile-grid {
     display: grid;
@@ -307,14 +386,18 @@ body {
     background: white;
 }
 
+.profile-tag h3 {
+    color: var(--primary-dark);
+}
+
 .info-list {
     list-style: none;
     margin-top: 15px;
 }
 
 .info-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed var(--bg-light);
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(226, 129, 165, 0.4);
 }
 
 .info-list li:last-child {
@@ -322,7 +405,7 @@ body {
 }
 
 /* ==========================================
-   7. Timeline (Education)
+   8. Education Page & Timeline
    ========================================== */
 .timeline {
     position: relative;
@@ -337,7 +420,7 @@ body {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: var(--bg-light);
+    background: var(--accent-color);
 }
 
 .timeline-item {
@@ -369,21 +452,25 @@ body {
 }
 
 .badge-small {
+    display: inline-block;
+    margin-top: 10px;
     background: var(--primary-dark);
     color: white;
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: var(--radius-full);
+    font-size: 0.8rem;
 }
 
 .highlight-card {
-    border-left: 4px solid var(--primary-dark);
+    border-left: 5px solid var(--primary-main);
 }
 
 .table-container {
     background: white;
     border-radius: var(--radius-md);
-    padding: 20px;
+    padding: 24px;
     box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(226, 129, 165, 0.3);
 }
 
 .table-title {
@@ -398,7 +485,7 @@ body {
 }
 
 .custom-table th, .custom-table td {
-    padding: 12px 16px;
+    padding: 14px 16px;
     border-bottom: 1px solid var(--bg-light);
 }
 
@@ -408,7 +495,7 @@ body {
 }
 
 /* ==========================================
-   8. Hobby & Contact Pages
+   9. Hobby & Contact Pages
    ========================================== */
 .hobby-card {
     text-align: center;
@@ -430,7 +517,7 @@ body {
 
 .cta-box {
     text-align: center;
-    background: linear-gradient(135deg, var(--bg-light), white);
+    background: linear-gradient(135deg, #FFF3F6, white);
     border: 2px dashed var(--primary-light);
 }
 
@@ -445,13 +532,15 @@ body {
 }
 
 /* ==========================================
-   9. Footer
+   10. Footer
    ========================================== */
 footer {
     background: var(--primary-dark);
     color: white;
     padding: 40px 20px 20px;
     margin-top: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-container {
@@ -465,18 +554,20 @@ footer {
 }
 
 .footer-info h3 {
-    font-size: 1.2rem;
-    color: var(--accent-blue);
+    font-size: 1.3rem;
+    color: var(--accent-color);
 }
 
 .footer-info p {
     font-size: 0.9rem;
-    color: var(--bg-light);
+    color: var(--accent-color);
+    opacity: 0.9;
 }
 
 .footer-links {
     display: flex;
-    gap: 15px;
+    gap: 16px;
+    list-style: none;
 }
 
 .footer-links a {
@@ -487,19 +578,19 @@ footer {
 }
 
 .footer-links a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-color);
 }
 
 .copyright {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     width: 100%;
-    padding-top: 15px;
+    padding-top: 16px;
 }
 
 /* ==========================================
-   10. Responsive Design (Media Queries)
+   11. Responsive Design (Media Queries)
    ========================================== */
 @media (max-width: 768px) {
     .navbar {
