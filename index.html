@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>หน้าแรก | Portfolio - ณัฐนิชา ยารังกา</title>
+    <title>หน้าแรก - Portfolio ณัฐนิชา ยารังกา</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div class="music-notes-bg">
+        <span class="note n1">♪</span>
+        <span class="note n2">♫</span>
+        <span class="note n3">♩</span>
+        <span class="note n4">♬</span>
+        <span class="note n5">♭</span>
+    </div>
+
     <header class="navbar-container">
         <nav class="navbar">
-            <a href="index.html" class="logo">PENG<span>.space</span></a>
+            <a href="index.html" class="logo">Phleng<span>Portfolio</span></a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">หน้าแรก</a></li>
                 <li><a href="profile.html">ประวัติส่วนตัว</a></li>
@@ -20,40 +29,44 @@
         </nav>
     </header>
 
-    <main>
+    <main class="page-content">
         <section class="hero-section">
             <div class="hero-container">
                 <div class="hero-text">
-                    <span class="badge">Astro Portfolio</span>
-                    <h1>สวัสดีค่ะ, ฉันชื่อ <br><span class="highlight-text">ณัฐนิชา ยารังกา</span></h1>
-                    <p class="hero-subtitle">นักเรียนชั้นมัธยมศึกษาปีที่ 3/2 โรงเรียนจอมทอง ผู้หลงใหลในคณิตศาสตร์และการคำนวณ</p>
+                    <span class="badge">🎵 Welcome to My Portfolio</span>
+                    <h1>สวัสดีค่ะ ฉันชื่อ <br><span class="highlight-text">นางสาวณัฐนิชา ยารังกา</span></h1>
+                    <p class="hero-subtitle">นักเรียนชั้น ม.3/2 โรงเรียนจอมทอง ผู้หลงใหลในเสียงเพลง ท่วงทำนอง และตัวเลขแห่งการคำนวณคณิตศาสตร์</p>
                     <div class="hero-buttons">
-                        <a href="profile.html" class="btn btn-primary">รู้จักฉันมากขึ้น</a>
-                        <a href="hobby.html" class="btn btn-secondary">ดูงานอดิเรกของฉัน</a>
+                        <a href="profile.html" class="btn btn-primary">รู้จักฉันมากขึ้น 🎶</a>
+                        <a href="hobby.html" class="btn btn-secondary">ดูงานอดิเรก 🎤</a>
                     </div>
                 </div>
+
                 <div class="hero-image-wrapper">
                     <div class="glow-bg"></div>
-                    <img src="https://placehold.co/400x400/1976d2/ffffff?text=Natnicha" alt="รูปโปรไฟล์ของ ณัฐนิชา ยารังกา" class="profile-img">
+                    <div class="vinyl-container">
+                        <img src="https://placehold.co/400x400/A84370/FFFFFF/png?text=Natnicha" alt="รูปโปรไฟล์ของนางสาวณัฐนิชา ยารังกา" class="profile-img vinyl-record">
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="highlights-section">
-            <div class="container">
-                <div class="grid-3">
-                    <div class="card stat-card">
-                        <h3>15 ปี</h3>
-                        <p>อายุ</p>
-                    </div>
-                    <div class="card stat-card">
-                        <h3>ม.3/2</h3>
-                        <p>โรงเรียนจอมทอง</p>
-                    </div>
-                    <div class="card stat-card">
-                        <h3>คณิตศาสตร์</h3>
-                        <p>วิชาที่หลงใหล</p>
-                    </div>
+        <section class="container mt-40">
+            <div class="grid-3">
+                <div class="card stat-card">
+                    <div class="card-icon">🎤</div>
+                    <h3>สายดนตรี</h3>
+                    <p>ร้องเพลง & ฟังเพลงผ่อนคลาย</p>
+                </div>
+                <div class="card stat-card">
+                    <div class="card-icon">📐</div>
+                    <h3>วิชาโปรด</h3>
+                    <p>คณิตศาสตร์ & การคำนวณ</p>
+                </div>
+                <div class="card stat-card">
+                    <div class="card-icon">🏫</div>
+                    <h3>สถาบัน</h3>
+                    <p>โรงเรียนจอมทอง (ม.3/2)</p>
                 </div>
             </div>
         </section>
@@ -62,18 +75,21 @@
     <footer>
         <div class="footer-container">
             <div class="footer-info">
-                <h3>ณัฐนิชา ยารังกา (เพลง)</h3>
-                <p>นักเรียนชั้นมัธยมศึกษาปีที่ 3/2 โรงเรียนจอมทอง จังหวัดเชียงใหม่</p>
+                <h3>นางสาวณัฐนิชา ยารังกา (เพลง)</h3>
+                <p>โครงงานวิชาคอมพิวเตอร์ - ชั้นมัธยมศึกษาปีที่ 3/2 โรงเรียนจอมทอง</p>
             </div>
-            <div class="footer-links">
-                <a href="index.html">หน้าแรก</a>
-                <a href="profile.html">ประวัติส่วนตัว</a>
-                <a href="education.html">การศึกษา</a>
-                <a href="hobby.html">งานอดิเรก</a>
-                <a href="contact.html">ติดต่อ</a>
+            <ul class="footer-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+            <div class="copyright">
+                &copy; 2026 Natnicha Yarangka. Designed with Sweet Music Theme.
             </div>
-            <p class="copyright">&copy; 2026 Natnicha Yarangka. All Rights Reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
