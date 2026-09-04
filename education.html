@@ -3,103 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>การศึกษา | Student Portfolio</title>
+    <title>การศึกษา | Portfolio - ณัฐนิชา ยารังกา</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">PORTFOLIO<span>.M3</span></a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">หน้าแรก</a></li>
-                    <li><a href="profile.html" class="nav-link">ประวัติส่วนตัว</a></li>
-                    <li><a href="education.html" class="nav-link active">การศึกษา</a></li>
-                    <li><a href="hobby.html" class="nav-link">งานอดิเรก</a></li>
-                    <li><a href="contact.html" class="nav-link">ติดต่อ</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">PENG<span>.space</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html" class="active">การศึกษา</a></li>
+                <li><a href="hobby.html">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container page-content">
-        <div class="section-title">
-            <h2>ประวัติการศึกษา</h2>
-            <p>Education Background & Timeline</p>
-        </div>
+    <main class="page-content">
+        <section class="container">
+            <div class="section-title">
+                <h2>ประวัติการศึกษา</h2>
+                <p>Education Pathway</p>
+            </div>
 
-        <section class="timeline-section">
             <div class="timeline">
-                <div class="timeline-item left">
-                    <div class="timeline-content">
-                        <span class="year-badge">ประถมศึกษา</span>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <span class="timeline-date">ระดับประถมศึกษา</span>
                         <h3>โรงเรียนประถมศึกษา</h3>
-                        <p>สำเร็จการศึกษาระดับชั้นประถมศึกษาปีที่ 1 - 6 ด้วยผลการเรียนที่ดี และเข้าร่วมกิจกรรมของโรงเรียนอย่างสม่ำเสมอ</p>
+                        <p>สำเร็จการศึกษาระดับประถมศึกษาด้วยผลการเรียนที่ดีเยี่ยม และเป็นจุดเริ่มต้นของความสนใจในวิชาคำนวณ</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
-                    <div class="timeline-content">
-                        <span class="year-badge">มัธยมศึกษาตอนต้น</span>
-                        <h3>[กรอกชื่อโรงเรียน]</h3>
-                        <p>กำลังศึกษาชั้นมัธยมศึกษาปีที่ 3/2 เน้นการเรียนรู้ด้านวิชาการ เทคโนโลยี และทักษะสังคม</p>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content card">
+                        <span class="timeline-date">ระดับมัธยมศึกษาตอนต้น</span>
+                        <h3>โรงเรียนจอมทอง</h3>
+                        <p>ศึกษาในระดับชั้น ม.1 - ม.3/2 เข้าร่วมกิจกรรมของโรงเรียน และพัฒนากระบวนการคิดทางคณิตศาสตร์อย่างต่อเนื่อง</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot active-dot"></div>
+                    <div class="timeline-content card highlight-card">
+                        <span class="timeline-date badge-small">ปัจจุบัน</span>
+                        <h3>ชั้นมัธยมศึกษาปีที่ 3/2</h3>
+                        <p>มุ่งเน้นการศึกษาด้านวิทยาศาสตร์-คณิตศาสตร์ และเตรียมความพร้อมเพื่อเข้าสู่การศึกษาระดับมัธยมศึกษาตอนปลาย</p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <section class="education-table-section">
-            <div class="info-card">
-                <h3>สรุปข้อมูลการศึกษา</h3>
-                <div class="table-responsive">
-                    <table class="custom-table">
-                        <thead>
-                            <tr>
-                                <th>ระดับการศึกษา</th>
-                                <th>สถานศึกษา</th>
-                                <th>ระดับชั้น</th>
-                                <th>สถานะ</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>ประถมศึกษา</td>
-                                <td>โรงเรียนณัทชวิทยื</td>
-                                <td>ป.1 - ป.6</td>
-                                <td><span class="status-badge success">สำเร็จการศึกษา</span></td>
-                            </tr>
-                            <tr>
-                                <td>มัธยมศึกษาตอนต้น</td>
-                                <td>โรงเรียนจอมทอง</td>
-                                <td>ม.1 - ม.3</td>
-                                <td><span class="status-badge active">กำลังศึกษา</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="table-container mt-40">
+                <h3 class="table-title">สรุปข้อมูลการศึกษา</h3>
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>ระดับการศึกษา</th>
+                            <th>สถานศึกษา</th>
+                            <th>ระดับชั้น</th>
+                            <th>วิชาที่โดดเด่น</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ประถมศึกษา</td>
+                            <td>โรงเรียนประถมศึกษา</td>
+                            <td>ป.1 - ป.6</td>
+                            <td>คณิตศาสตร์, วิทยาศาสตร์</td>
+                        </tr>
+                        <tr>
+                            <td>มัธยมศึกษาตอนต้น</td>
+                            <td>โรงเรียนจอมทอง</td>
+                            <td>ม.3/2 (ปัจจุบัน)</td>
+                            <td>คณิตศาสตร์, คอมพิวเตอร์</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-container">
+    <footer>
+        <div class="footer-container">
             <div class="footer-info">
-                <h3>PORTFOLIO<span>.M3</span></h3>
-                <p>เว็บไซต์แนะนำตัวเองสำหรับโครงงานวิชาคอมพิวเตอร์</p>
-                <p>จัดทำโดย ด.ญ.ณับนิชา ยารังกา ชั้น ม.3/2</p>
+                <h3>ณัฐนิชา ยารังกา (เพลง)</h3>
+                <p>นักเรียนชั้นมัธยมศึกษาปีที่ 3/2 โรงเรียนจอมทอง จังหวัดเชียงใหม่</p>
             </div>
             <div class="footer-links">
-                <h4>เมนูด่วน</h4>
-                <ul>
-                    <li><a href="index.html">หน้าแรก</a></li>
-                    <li><a href="profile.html">ประวัติส่วนตัว</a></li>
-                    <li><a href="education.html">การศึกษา</a></li>
-                    <li><a href="hobby.html">งานอดิเรก</a></li>
-                    <li><a href="contact.html">ติดต่อ</a></li>
-                </ul>
+                <a href="index.html">หน้าแรก</a>
+                <a href="profile.html">ประวัติส่วนตัว</a>
+                <a href="education.html">การศึกษา</a>
+                <a href="hobby.html">งานอดิเรก</a>
+                <a href="contact.html">ติดต่อ</a>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 ด.ณัฐนิชา ยารังกา. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2026 Natnicha Yarangka. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
