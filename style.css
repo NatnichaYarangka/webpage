@@ -1,5 +1,5 @@
 /* ==========================================
-   1. CSS Reset & Variables Definitions
+   1. CSS Reset & Theme Variables
    Theme: Sweet Music (Soft Red, Mauve & Magenta)
    ========================================== */
 * {
@@ -55,7 +55,7 @@ body {
 }
 
 /* ==========================================
-   2. Floating Notes & Math Symbols Background Animation
+   2. Floating Notes & Math Symbols (ขยายขนาดใหญ่ขึ้น)
    ========================================== */
 .music-notes-bg {
     position: fixed;
@@ -70,20 +70,21 @@ body {
 
 .note {
     position: absolute;
-    color: var(--primary-light);
-    opacity: 0.25;
-    font-size: 2.2rem;
+    color: var(--primary-main);
+    opacity: 0.35;               /* ปรับความเด่นขึ้น */
+    font-size: 3.8rem;           /* ขยายขนาดตัวโน้ตจาก 2.2rem -> 3.8rem */
     font-weight: bold;
-    animation: floatNote 12s infinite linear;
+    filter: drop-shadow(0 4px 10px rgba(168, 67, 112, 0.2));
+    animation: floatNote 11s infinite linear;
 }
 
-.n1 { left: 6%; animation-duration: 10s; animation-delay: 0s; }
-.n2 { left: 20%; animation-duration: 14s; animation-delay: 2s; }
-.n3 { left: 38%; animation-duration: 11s; animation-delay: 4s; }
-.n4 { left: 55%; animation-duration: 13s; animation-delay: 1s; }
-.n5 { left: 72%; animation-duration: 9s; animation-delay: 3s; }
-.n6 { left: 85%; animation-duration: 15s; animation-delay: 5s; }
-.n7 { left: 94%; animation-duration: 10s; animation-delay: 2s; }
+.n1 { left: 4%;  animation-duration: 9s;  animation-delay: 0s; }
+.n2 { left: 18%; animation-duration: 13s; animation-delay: 2s; font-size: 4.5rem; }
+.n3 { left: 35%; animation-duration: 10s; animation-delay: 4s; }
+.n4 { left: 52%; animation-duration: 12s; animation-delay: 1s; font-size: 4.2rem; }
+.n5 { left: 68%; animation-duration: 8s;  animation-delay: 3s; }
+.n6 { left: 82%; animation-duration: 14s; animation-delay: 5s; font-size: 4.8rem; }
+.n7 { left: 92%; animation-duration: 9s;  animation-delay: 2s; }
 
 @keyframes floatNote {
     0% {
@@ -91,13 +92,13 @@ body {
         opacity: 0;
     }
     20% {
-        opacity: 0.35;
+        opacity: 0.45;
     }
     80% {
-        opacity: 0.35;
+        opacity: 0.45;
     }
     100% {
-        transform: translateY(-10vh) rotate(360deg) scale(1.2);
+        transform: translateY(-15vh) rotate(360deg) scale(1.3);
         opacity: 0;
     }
 }
@@ -114,7 +115,7 @@ body {
 }
 
 .page-content {
-    padding: 60px 0;
+    padding: 30px 0 60px;
     flex: 1;
     position: relative;
     z-index: 1;
@@ -154,40 +155,88 @@ body {
 .mt-40 { margin-top: 40px; }
 
 /* ==========================================
-   4. Interactive Card & Glow Effects
+   4. Audio Player Bar Widget (ขยายขนาด)
+   ========================================== */
+.audio-player-container {
+    margin-bottom: 25px;
+}
+
+.audio-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--primary-light);
+    border-radius: var(--radius-md);
+    padding: 18px 28px;          /* ขยายขนาด padding ให้ใหญ่ขึ้น */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-md);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.audio-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 1.1rem;           /* ขยายขนาดข้อความ */
+}
+
+.music-icon-spin {
+    font-size: 2.5rem;           /* ขยายไอคอนเพลงจาก 1.6rem -> 2.5rem */
+    animation: spinIcon 4s infinite linear;
+}
+
+@keyframes spinIcon {
+    100% { transform: rotate(360deg); }
+}
+
+.audio-subtext {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.custom-audio {
+    height: 42px;                /* ขยายความสูงแถบควบคุมเสียง */
+    outline: none;
+    border-radius: var(--radius-full);
+}
+
+/* ==========================================
+   5. Interactive Cards & Glow Effects
    ========================================== */
 .card {
     background: rgba(255, 255, 255, 0.92);
     backdrop-filter: blur(8px);
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 26px;
     border: 1px solid rgba(226, 129, 165, 0.3);
     box-shadow: var(--shadow-sm);
     transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .interactive-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    box-shadow: 0 14px 30px rgba(168, 67, 112, 0.22);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 18px 36px rgba(168, 67, 112, 0.28);
     border-color: var(--primary-light);
 }
 
-/* Icon Bounce Effect */
 .bounce-icon {
+    font-size: 3rem !important;  /* ขยายขนาดไอคอนบนกล่อง Card จาก 2.2rem -> 3rem */
     display: inline-block;
     transition: transform 0.3s ease;
 }
 
 .interactive-card:hover .bounce-icon {
-    transform: scale(1.25) rotate(8deg);
+    transform: scale(1.3) rotate(12deg);
 }
 
 /* ==========================================
-   5. Buttons & Shimmer Sweeping Animation
+   6. Buttons & Shimmer Sweeping Animation
    ========================================== */
 .btn {
     display: inline-block;
-    padding: 12px 28px;
+    padding: 14px 32px;          /* ขยายปุ่มให้ใหญ่ขึ้น */
+    font-size: 1.05rem;
     border-radius: var(--radius-full);
     text-decoration: none;
     font-weight: 600;
@@ -199,15 +248,14 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
     color: white;
-    box-shadow: 0 4px 15px rgba(168, 67, 112, 0.3);
+    box-shadow: 0 6px 20px rgba(168, 67, 112, 0.35);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(168, 67, 112, 0.45);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(168, 67, 112, 0.5);
 }
 
-/* Shimmer Light Sweep on Primary Buttons */
 .shimmer-btn::after {
     content: '';
     position: absolute;
@@ -218,23 +266,23 @@ body {
     background: linear-gradient(
         60deg,
         transparent,
-        rgba(255, 255, 255, 0.35),
+        rgba(255, 255, 255, 0.45),
         transparent
     );
     transform: rotate(30deg);
-    animation: shimmerSweep 4s infinite;
+    animation: shimmerSweep 3.5s infinite;
 }
 
 @keyframes shimmerSweep {
     0% { transform: translateX(-100%) rotate(30deg); }
-    20% { transform: translateX(100%) rotate(30deg); }
+    25% { transform: translateX(100%) rotate(30deg); }
     100% { transform: translateX(100%) rotate(30deg); }
 }
 
 .btn-secondary {
     background: var(--bg-light);
     color: var(--primary-dark);
-    border: 1px solid var(--primary-light);
+    border: 2px solid var(--primary-light);
 }
 
 .btn-secondary:hover {
@@ -242,7 +290,6 @@ body {
     color: var(--primary-dark);
 }
 
-/* Pulse Badge Effect */
 .pulse-badge {
     display: inline-block;
     animation: pulseBadge 2s infinite;
@@ -250,35 +297,35 @@ body {
 
 @keyframes pulseBadge {
     0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(168, 67, 112, 0.4); }
-    70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(168, 67, 112, 0); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 14px rgba(168, 67, 112, 0); }
     100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(168, 67, 112, 0); }
 }
 
 .badge {
     background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
     color: white;
-    padding: 6px 16px;
+    padding: 8px 20px;
     border-radius: var(--radius-full);
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 600;
 }
 
 /* ==========================================
-   6. Navigation Bar & Logo Sound Wave
+   7. Navigation Bar & Logo Sound Wave (ขยายขนาด)
    ========================================== */
 .navbar-container {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 243, 246, 0.88);
+    background: rgba(255, 243, 246, 0.92);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(226, 129, 165, 0.25);
+    border-bottom: 2px solid rgba(226, 129, 165, 0.3);
 }
 
 .navbar {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 16px 20px;
+    padding: 18px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -287,12 +334,12 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     text-decoration: none;
 }
 
 .logo-text {
-    font-size: 1.5rem;
+    font-size: 1.7rem;           /* ขยายโลโก้ขึ้น */
     font-weight: 800;
     color: var(--primary-dark);
 }
@@ -301,18 +348,18 @@ body {
     color: var(--primary-main);
 }
 
-/* Wave Bar ข้าง Logo */
+/* คลื่นเสียงข้าง Logo ใหญ่ขึ้น */
 .logo-wave {
     display: flex;
     align-items: flex-end;
-    gap: 3px;
-    height: 16px;
+    gap: 4px;
+    height: 24px;                /* ขยายความสูงจาก 16px -> 24px */
 }
 
 .logo-wave span {
-    width: 3px;
+    width: 4px;                  /* ขยายความกว้างแท่ง */
     background: var(--primary-main);
-    border-radius: 3px;
+    border-radius: 4px;
     animation: waveBar 1.2s infinite ease-in-out alternate;
 }
 
@@ -335,7 +382,8 @@ body {
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
-    padding: 8px 18px;
+    padding: 10px 22px;          /* ขยายเมนู Navigation */
+    font-size: 1.05rem;
     border-radius: var(--radius-full);
     transition: all 0.3s ease;
 }
@@ -343,14 +391,14 @@ body {
 .nav-links a:hover, .nav-links a.active {
     background-color: var(--primary-main);
     color: white;
-    box-shadow: 0 4px 12px rgba(168, 67, 112, 0.25);
+    box-shadow: 0 4px 15px rgba(168, 67, 112, 0.35);
 }
 
 /* ==========================================
-   7. Hero Section & Sound Wave Widget
+   8. Hero Section & Sound Wave Widget (ขยายขนาดใหญ่พิเศษ)
    ========================================== */
 .hero-section {
-    padding: 60px 20px;
+    padding: 40px 20px;
 }
 
 .hero-container {
@@ -363,10 +411,10 @@ body {
 }
 
 .hero-text h1 {
-    font-size: 2.8rem;
-    margin: 16px 0;
+    font-size: 3.2rem;           /* ขยายหัวข้อใหญ่ขึ้น */
+    margin: 18px 0;
     color: var(--primary-dark);
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .highlight-text {
@@ -376,27 +424,28 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-muted);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
 }
 
-/* Equalizer / Sound Wave Box ใน Hero */
+/* Equalizer / Sound Wave Box ใหญ่เด่น */
 .sound-wave-box {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 8px 16px;
+    gap: 8px;                    /* ขยายช่องว่างระหว่างแท่งคลื่น */
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px 24px;          /* ขยายขนาดกล่อง Equalizer */
     border-radius: var(--radius-full);
-    border: 1px solid var(--accent-color);
+    border: 2px solid var(--primary-light);
+    box-shadow: var(--shadow-sm);
 }
 
 .wave-bar {
-    width: 3px;
-    height: 18px;
+    width: 5px;                  /* ขยายความกว้างแท่งคลื่นเสียงจาก 3px -> 5px */
+    height: 30px;                /* ขยายความสูงสูงสุดจาก 18px -> 30px */
     background: var(--primary-main);
-    border-radius: 2px;
+    border-radius: 3px;
     animation: soundEqualizer 1s infinite ease-in-out alternate;
 }
 
@@ -407,15 +456,15 @@ body {
 .wave-bar:nth-child(5) { animation-delay: 0.3s; }
 
 @keyframes soundEqualizer {
-    0% { height: 4px; }
-    100% { height: 20px; }
+    0% { height: 6px; }
+    100% { height: 30px; }
 }
 
 .sound-text {
-    font-size: 0.85rem;
+    font-size: 1rem;            /* ขยายข้อความขนาดย่อ */
     color: var(--primary-dark);
-    font-weight: 600;
-    margin-left: 6px;
+    font-weight: 700;
+    margin-left: 8px;
 }
 
 .hero-buttons {
@@ -428,27 +477,28 @@ body {
     text-align: center;
 }
 
+/* วงกลมแสง Glow ด้านหลังใหญ่ขึ้น */
 .glow-bg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 270px;
-    height: 270px;
+    width: 350px;                /* ขยายรัศมีแสงจาก 270px -> 350px */
+    height: 350px;
     background: var(--primary-light);
-    filter: blur(55px);
-    opacity: 0.5;
+    filter: blur(65px);
+    opacity: 0.6;
     border-radius: 50%;
     z-index: 1;
     animation: glowPulse 3s infinite alternate;
 }
 
 @keyframes glowPulse {
-    0% { opacity: 0.35; filter: blur(45px); }
-    100% { opacity: 0.6; filter: blur(65px); }
+    0% { opacity: 0.4; filter: blur(55px); }
+    100% { opacity: 0.75; filter: blur(75px); }
 }
 
-/* Vinyl Record Effect */
+/* แผ่นเสียง Vinyl Record ขยายใหญ่ขึ้น */
 .vinyl-container {
     position: relative;
     z-index: 2;
@@ -456,17 +506,17 @@ body {
 }
 
 .vinyl-record {
-    width: 280px;
-    height: 280px;
+    width: 340px;                /* ขยายขนาดแผ่นเสียงจาก 280px -> 340px */
+    height: 340px;
     object-fit: cover;
     border-radius: 50%;
-    border: 8px solid var(--primary-dark);
-    box-shadow: 0 0 28px rgba(168, 67, 112, 0.4);
+    border: 10px solid var(--primary-dark); /* ขยายขอบแผ่นเสียง */
+    box-shadow: 0 0 35px rgba(168, 67, 112, 0.45);
     transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .vinyl-record:hover {
-    transform: rotate(180deg) scale(1.05);
+    transform: rotate(180deg) scale(1.08);
 }
 
 .vinyl-center-dot {
@@ -474,10 +524,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 20px;
-    height: 20px;
+    width: 28px;                 /* ขยายรูตรงกลางแผ่นเสียง */
+    height: 28px;
     background: white;
-    border: 4px solid var(--primary-dark);
+    border: 5px solid var(--primary-dark);
     border-radius: 50%;
     z-index: 3;
 }
@@ -487,26 +537,26 @@ body {
 }
 
 .card-icon {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
 }
 
 .stat-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--primary-dark);
 }
 
 .stat-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* ==========================================
-   8. Profile Page
+   9. Profile Page
    ========================================== */
 .profile-grid {
     display: grid;
-    grid-template-columns: 320px 1fr;
+    grid-template-columns: 340px 1fr;
     gap: 30px;
 }
 
@@ -523,21 +573,23 @@ body {
 }
 
 .profile-tag {
-    padding: 16px;
+    padding: 18px;
     background: white;
 }
 
 .profile-tag h3 {
     color: var(--primary-dark);
+    font-size: 1.3rem;
 }
 
 .info-list {
     list-style: none;
     margin-top: 15px;
+    font-size: 1.05rem;
 }
 
 .info-list li {
-    padding: 10px 0;
+    padding: 12px 0;
     border-bottom: 1px dashed rgba(226, 129, 165, 0.4);
 }
 
@@ -546,11 +598,11 @@ body {
 }
 
 /* ==========================================
-   9. Education Page & Timeline
+   10. Education Page & Timeline
    ========================================== */
 .timeline {
     position: relative;
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
@@ -560,56 +612,244 @@ body {
     left: 20px;
     top: 0;
     bottom: 0;
-    width: 4px;
+    width: 5px;                  /* ขยายเส้น Timeline */
     background: var(--accent-color);
 }
 
 .timeline-item {
     position: relative;
-    padding-left: 60px;
-    margin-bottom: 30px;
+    padding-left: 65px;
+    margin-bottom: 35px;
 }
 
 .timeline-dot {
     position: absolute;
-    left: 12px;
+    left: 10px;
     top: 20px;
-    width: 20px;
-    height: 20px;
+    width: 26px;                 /* ขยายจุด Timeline จาก 20px -> 26px */
+    height: 26px;
     border-radius: 50%;
     background: var(--primary-light);
-    border: 4px solid white;
+    border: 5px solid white;
     box-shadow: var(--shadow-sm);
 }
 
 .pulse-dot {
     background: var(--primary-dark);
-    box-shadow: 0 0 0 4px rgba(168, 67, 112, 0.25);
+    box-shadow: 0 0 0 6px rgba(168, 67, 112, 0.3);
 }
 
 .timeline-date {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--primary-main);
     font-weight: bold;
 }
 
 .badge-small {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 12px;
     background: var(--primary-dark);
     color: white;
-    padding: 3px 12px;
+    padding: 4px 14px;
     border-radius: var(--radius-full);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 }
 
 .highlight-card {
-    border-left: 5px solid var(--primary-main);
+    border-left: 6px solid var(--primary-main);
 }
 
 .table-container {
     background: white;
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 28px;
     box-shadow: var(--shadow-sm);
-    border:
+    border: 1px solid rgba(226, 129, 165, 0.3);
+}
+
+.table-title {
+    margin-bottom: 18px;
+    color: var(--primary-dark);
+    font-size: 1.3rem;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 1.05rem;
+}
+
+.custom-table th, .custom-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.custom-table th {
+    background: var(--bg-light);
+    color: var(--primary-dark);
+}
+
+.rating-stars {
+    letter-spacing: 3px;
+    font-size: 1.2rem;
+}
+
+/* ==========================================
+   11. Hobby & Contact Pages
+   ========================================== */
+.hobby-card {
+    text-align: center;
+}
+
+.hobby-icon, .contact-icon {
+    font-size: 3.2rem;           /* ขยายไอคอนหน้า Hobby & Contact */
+    margin-bottom: 14px;
+}
+
+.contact-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    text-align: center;
+}
+
+.cta-box {
+    text-align: center;
+    background: linear-gradient(135deg, #FFF3F6, white);
+    border: 2px dashed var(--primary-light);
+    padding: 35px;
+}
+
+.cta-box h3 {
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.cta-box p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+}
+
+/* ==========================================
+   12. Footer
+   ========================================== */
+footer {
+    background: var(--primary-dark);
+    color: white;
+    padding: 45px 20px 25px;
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+}
+
+.footer-info h3 {
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+
+.footer-info p {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    opacity: 0.9;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--accent-color);
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    padding-top: 18px;
+}
+
+/* ==========================================
+   13. Responsive Design (Media Queries)
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.4rem;
+    }
+
+    .vinyl-record {
+        width: 260px;
+        height: 260px;
+    }
+
+    .audio-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .audio-info {
+        flex-direction: column;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .sound-wave-box {
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+    }
+
+    .timeline-dot {
+        left: 0px;
+    }
+}
