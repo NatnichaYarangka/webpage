@@ -3,90 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>งานอดิเรก | Student Portfolio</title>
+    <title>งานอดิเรก | Portfolio - ณัฐนิชา ยารังกา</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="logo">PORTFOLIO<span>.M3</span></a>
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">หน้าแรก</a></li>
-                    <li><a href="profile.html" class="nav-link">ประวัติส่วนตัว</a></li>
-                    <li><a href="education.html" class="nav-link">การศึกษา</a></li>
-                    <li><a href="hobby.html" class="nav-link active">งานอดิเรก</a></li>
-                    <li><a href="contact.html" class="nav-link">ติดต่อ</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">PENG<span>.space</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html" class="active">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <main class="container page-content">
-        <div class="section-title">
-            <h2>งานอดิเรกและความสนใจ</h2>
-            <p>Hobbies & Personal Interests</p>
-        </div>
-
-        <div class="hobby-grid">
-            <div class="hobby-card">
-                <div class="hobby-icon">🎮</div>
-                <h3>เล่นเกม</h3>
-                <p>ชอบเล่นเกมแนววางแผนและสร้างสรรค์ ช่วยฝึกทักษะการแก้ปัญหา การวางแผน และการทำงานร่วมกับผู้อื่น</p>
+    <main class="page-content">
+        <section class="container">
+            <div class="section-title">
+                <h2>งานอดิเรกและความสนใจ</h2>
+                <p>Hobbies & Interests</p>
             </div>
 
-            <div class="hobby-card">
-                <div class="hobby-icon">💻</div>
-                <h3>เขียนโปรแกรม / ทำเว็บ</h3>
-                <p>สนใจการศึกษาค้นคว้าเกี่ยวกับการพัฒนาเว็บไซต์ HTML, CSS และการออกแบบ UI/UX ในเวลาว่าง</p>
-            </div>
+            <div class="grid-3">
+                <div class="card hobby-card">
+                    <div class="hobby-icon">🎵</div>
+                    <h3>เล่นดนตรี & ร้องเพลง</h3>
+                    <p>การร้องเพลงและเล่นดนตรีช่วยผ่อนคลายความเครียด เพิ่มสร้างสรรค์ และเสริมสร้างสมาธิที่ดีในการเรียน</p>
+                </div>
 
-            <div class="hobby-card">
-                <div class="hobby-icon">🎵</div>
-                <h3>ฟังเพลง</h3>
-                <p>ฟังเพลงเพื่อผ่อนคลายและสร้างสมาธิขณะอ่านหนังสือหรือทำโครงงาน เช่น เพลง Pop และ Lofi</p>
-            </div>
+                <div class="card hobby-card">
+                    <div class="hobby-icon">🧮</div>
+                    <h3>การคำนวณคณิตศาสตร์</h3>
+                    <p>สนุกกับการแก้โจทย์ปัญหาคณิตศาสตร์ ฝึกทักษะการคิดวิเคราะห์และแก้ปัญหาอย่างเป็นระบบ</p>
+                </div>
 
-            <div class="hobby-card">
-                <div class="hobby-icon">⚽</div>
-                <h3>เล่นกีฬา</h3>
-                <p>ออกกำลังกายเพื่อสุขภาพที่แข็งแรง เช่น เล่นฟุตบอล หรือแบดมินตันกับเพื่อน ๆ หลังเลิกเรียน</p>
+                <div class="card hobby-card">
+                    <div class="hobby-icon">💻</div>
+                    <h3>เทคโนโลยี & เว็บไซต์</h3>
+                    <p>สนใจการเรียนรู้สิ่งใหม่ๆ เกี่ยวกับเทคโนโลยีคอมพิวเตอร์และการพัฒนาเว็บไซต์เพื่อสร้างสรรค์ผลงาน</p>
+                </div>
             </div>
-
-            <div class="hobby-card">
-                <div class="hobby-icon">🎬</div>
-                <h3>ชมภาพยนตร์</h3>
-                <p>ชอบดูหนังแนว Sci-Fi และอนิเมชัน ซึ่งช่วยเสริมสร้างจินตนาการและมุมมองใหม่ ๆ</p>
-            </div>
-
-            <div class="hobby-card">
-                <div class="hobby-icon">📷</div>
-                <h3>ถ่ายภาพ</h3>
-                <p>เก็บภาพบรรยากาศ วิวธรรมชาติ และกิจกรรมต่าง ๆ เพื่อบันทึกความทรงจำและฝึกการจัดองค์ประกอบภาพ</p>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container footer-container">
+    <footer>
+        <div class="footer-container">
             <div class="footer-info">
-                <h3>PORTFOLIO<span>.M3</span></h3>
-                <p>เว็บไซต์แนะนำตัวเองสำหรับโครงงานวิชาคอมพิวเตอร์</p>
-                <p>จัดทำโดย ด.ญ.ณัฐนิชา ยารังกา ชั้น ม.3/2</p>
+                <h3>ณัฐนิชา ยารังกา (เพลง)</h3>
+                <p>นักเรียนชั้นมัธยมศึกษาปีที่ 3/2 โรงเรียนจอมทอง จังหวัดเชียงใหม่</p>
             </div>
             <div class="footer-links">
-                <h4>เมนูด่วน</h4>
-                <ul>
-                    <li><a href="index.html">หน้าแรก</a></li>
-                    <li><a href="profile.html">ประวัติส่วนตัว</a></li>
-                    <li><a href="education.html">การศึกษา</a></li>
-                    <li><a href="hobby.html">งานอดิเรก</a></li>
-                    <li><a href="contact.html">ติดต่อ</a></li>
-                </ul>
+                <a href="index.html">หน้าแรก</a>
+                <a href="profile.html">ประวัติส่วนตัว</a>
+                <a href="education.html">การศึกษา</a>
+                <a href="hobby.html">งานอดิเรก</a>
+                <a href="contact.html">ติดต่อ</a>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 [กรอกชื่อ-นามสกุล]. All Rights Reserved.</p>
+            <p class="copyright">&copy; 2026 Natnicha Yarangka. All Rights Reserved.</p>
         </div>
     </footer>
 </body>
