@@ -1,5 +1,5 @@
 /* ==========================================
-   1. CSS Reset & Variable Definitions
+   1. CSS Reset & Variable Definitions (Music Theme)
    ========================================== */
 * {
     margin: 0;
@@ -9,22 +9,23 @@
 }
 
 :root {
-    --primary-dark: #0D47A1;
-    --primary-main: #1976D2;
-    --primary-light: #42A5F5;
-    --accent-blue: #90CAF9;
-    --bg-light: #E3F2FD;
-    --bg-white: #FFFFFF;
-    --text-color: #1F2937;
-    --text-muted: #6B7280;
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 10px 15px -3px rgba(13, 71, 161, 0.15);
+    /* เปลี่ยนโทนสีเป็นธีมเครื่องดนตรี (Wood & Warm Gold Tone) */
+    --primary-dark: #3E2723;    /* สีน้ำตาลเข้ม (Dark Wood / Walnut Body) */
+    --primary-main: #6D4C41;    /* สีน้ำตาลอบอุ่น (Acoustic Wood / Guitar) */
+    --primary-light: #D4AF37;   /* สีทองบรอนซ์ (Brass / Metallic Instrument) */
+    --accent-blue: #E5C158;      /* สีเหลืองทองนวล (Glowing Accent) */
+    --bg-light: #F5EBE6;         /* สีครีมอุ่น (Sheet Music Paper) */
+    --bg-white: #FFFFFF;         /* สีขาวบริสุทธิ์ */
+    --text-color: #2C1D11;       /* สีน้ำตาลดำสำหรับข้อความ */
+    --text-muted: #795548;       /* สีน้ำตาลอ่อนสำหรับข้อความรอง */
+    --shadow-sm: 0 4px 6px -1px rgba(62, 39, 35, 0.08);
+    --shadow-md: 0 10px 15px -3px rgba(62, 39, 35, 0.15);
     --radius-md: 16px;
     --radius-full: 9999px;
 }
 
 body {
-    background-color: #F8FAFC;
+    background-color: #FAF6F0;  /* พื้นหลังสีครีมละมุนสบายตา */
     color: var(--text-color);
     line-height: 1.6;
     display: flex;
@@ -57,7 +58,7 @@ body {
 }
 
 .section-title p {
-    color: var(--primary-light);
+    color: var(--primary-main);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -86,7 +87,7 @@ body {
     background: var(--bg-white);
     border-radius: var(--radius-md);
     padding: 24px;
-    border: 1px solid rgba(227, 242, 253, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     box-shadow: var(--shadow-sm);
     transition: all 0.3s ease;
 }
@@ -94,6 +95,7 @@ body {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
 }
 
 .btn {
@@ -108,12 +110,12 @@ body {
 .btn-primary {
     background: linear-gradient(135deg, var(--primary-main), var(--primary-dark));
     color: white;
-    box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+    box-shadow: 0 4px 12px rgba(62, 39, 35, 0.25);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(25, 118, 210, 0.4);
+    box-shadow: 0 6px 16px rgba(62, 39, 35, 0.35);
 }
 
 .btn-secondary {
@@ -134,9 +136,9 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(250, 246, 240, 0.92);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--bg-light);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .navbar {
@@ -184,7 +186,7 @@ body {
    ========================================== */
 .hero-section {
     padding: 80px 20px;
-    background: linear-gradient(180deg, var(--bg-light) 0%, #F8FAFC 100%);
+    background: linear-gradient(180deg, var(--bg-light) 0%, #FAF6F0 100%);
 }
 
 .hero-container {
@@ -198,7 +200,7 @@ body {
 
 .badge {
     background: var(--primary-dark);
-    color: white;
+    color: var(--accent-blue);
     padding: 6px 14px;
     border-radius: var(--radius-full);
     font-size: 0.8rem;
@@ -243,7 +245,7 @@ body {
     height: 250px;
     background: var(--primary-light);
     filter: blur(60px);
-    opacity: 0.4;
+    opacity: 0.35;
     border-radius: 50%;
     z-index: 1;
 }
@@ -475,7 +477,6 @@ footer {
 .footer-links {
     display: flex;
     gap: 15px;
-
 }
 
 .footer-links a {
